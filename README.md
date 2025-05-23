@@ -50,17 +50,49 @@ npm run electron:build
 ## 项目结构
 
 ```
-├── electron/           # Electron 主进程代码
-│   ├── main.mjs       # 主进程入口
-│   ├── services/      # 后端服务
-│   └── types/         # 类型定义
-├── src/               # 前端代码
-│   ├── components/    # Vue 组件
-│   ├── middleware/    # 中间件
-│   ├── types/         # 类型定义
-│   └── views/         # 页面视图
-├── public/            # 静态资源
-└── dist-electron/     # 构建输出目录
+├── electron/                    # Electron 主进程代码
+│   ├── main.mjs                # 主进程入口文件
+│   ├── preload.mjs             # 预加载脚本
+│   ├── core/                   # 核心功能模块
+│   ├── types/                  # 类型定义
+│   │   ├── api.types.ts       # API 接口类型
+│   │   ├── annotation.types.ts # 标注相关类型
+│   │   ├── classification.types.ts # 分类相关类型
+│   │   ├── common.ts          # 通用类型
+│   │   ├── electron.d.ts      # Electron 类型声明
+│   │   ├── image.types.ts     # 图片相关类型
+│   │   ├── index.ts           # 类型导出入口
+│   │   ├── model.types.ts     # 模型相关类型
+│   │   ├── services.types.ts  # 服务接口类型
+│   │   └── tag.types.ts       # 标签相关类型
+│   ├── utils/                 # 工具函数
+│   ├── constants/             # 常量定义
+│   ├── config/                # 配置文件
+│   └── resources/             # 资源文件
+│
+├── src/                       # 前端代码
+│   ├── assets/               # 静态资源
+│   ├── components/           # Vue 组件
+│   ├── middleware/           # 中间件
+│   ├── router/               # 路由配置
+│   ├── services/             # 前端服务
+│   ├── types/                # 类型定义
+│   ├── views/                # 页面视图
+│   ├── App.vue              # 根组件
+│   ├── main.ts              # 入口文件
+│   ├── env.d.ts             # 环境变量类型
+│   ├── vite-env.d.ts        # Vite 环境类型
+│   └── style.css            # 全局样式
+│
+├── public/                   # 公共资源
+├── dist-electron/            # 构建输出目录
+├── .vscode/                  # VS Code 配置
+├── .git/                     # Git 配置
+├── node_modules/             # 依赖包
+├── package.json              # 项目配置
+├── tsconfig.json             # TypeScript 配置
+├── vite.config.ts            # Vite 配置
+└── vitest.config.ts          # Vitest 配置
 ```
 
 ## 开发指南
